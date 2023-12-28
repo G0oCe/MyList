@@ -74,6 +74,18 @@ public:
     size_t Size() const {
         return elementsCount;
     }
+
+   void Clear() {
+        Node* current = first;
+        while (current != nullptr) {
+            Node* next = current->next;
+            delete current;
+            current = next;
+        }
+
+        first = last = nullptr;
+        elementsCount = 0;
+    }
 };
 
 int main() {

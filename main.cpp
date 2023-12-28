@@ -39,6 +39,38 @@ public:
         ++elementsCount;
     }
 
+    void PopBack() {
+        if (last != nullptr) {
+            Node* temp = last;
+            last = last->prev;
+
+            if (last != nullptr) {
+                last->next = nullptr; // удаление
+            } else {
+                first = nullptr;
+            }
+
+            delete temp;
+            elementsCount--;
+        }
+    }
+
+    void PopFront() {
+        if (first != nullptr) {
+            Node* temp = first;
+            first = first->next;
+
+            if (first != nullptr) {
+                first->prev = nullptr;
+            } else {
+                last = nullptr;
+            }
+
+            delete temp;
+            elementsCount--;
+        }
+    }
+
     size_t Size() const {
         return elementsCount;
     }

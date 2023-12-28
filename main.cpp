@@ -6,6 +6,8 @@ private:
         T element;
         Node* prev = nullptr;
         Node* next = nullptr;
+
+        Node(const T& elem, Node* prevNode, Node* nextNode): element(elem), prev(prevNode), next(nextNode) {}
     };
     Node* first = nullptr;
     Node* last = nullptr;

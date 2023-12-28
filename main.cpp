@@ -89,5 +89,25 @@ public:
 };
 
 int main() {
+    List<int> myIntList;
+
+    myIntList.PushBack(10);
+    myIntList.PushBack(20);
+    myIntList.PushFront(5);
+
+    std::cout << "Size of the list: " << myIntList.Size() << std::endl;
+
+
+    myIntList.PopBack();
+    myIntList.PopFront();
+
+
+    std::cout << "Size after popping elements: " << myIntList.Size() << std::endl;
+
+    myIntList.Clear();
+
+
+    std::cout << "Size after clearing the list: " << myIntList.Size() << std::endl;
+
     return 0;
 }
